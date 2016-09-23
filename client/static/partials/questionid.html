@@ -1,0 +1,26 @@
+<div ng-controller="questionidController">
+  <div class="row">
+    <div>
+      <a href="#/home">Home</a> | <a href="#/answer/{{question._id}}">Answer This Question</a>
+    </div>
+    <div class="right">
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+  <div class='row'>
+    <div class="col s8">
+      <h2>{{question.content}}</h2>
+      <h5>{{question.description}}</h5>
+    </div>
+  </div>
+  <div ng-repeat="answer in question.answers"class="row">
+    <div class="col s8">
+      <h5>{{answer.user.name}}</h5>
+      <p>{{answer.content}}</p>
+      {{answer.description}}
+    </div>
+    <div class="col s3">
+      <p>{{answer.like}} Likes <button ng-click="likeAnswer(answer._id)">Like</button></p>
+    </div>
+  </div>
+</div>

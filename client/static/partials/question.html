@@ -1,0 +1,19 @@
+<div>
+  <a href="#/home">Home</a> |
+</div>
+<div class="right">
+  <a href="/logout">Logout</a>
+</div>
+<div ng-controller="questionController">
+  <div class='row'>
+    <div class="col s8">
+      <h4>New Question</h4>
+      <form>
+        <label>Question <input type="textarea" ng-model="question.content" value=""></label>
+        <label>Description (optional) <input type="textarea" ng-model="question.description" value=""></label>
+        <button><a href="#/home">Cancel</a></button>
+        <button ng-click="postQuestion(question)">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

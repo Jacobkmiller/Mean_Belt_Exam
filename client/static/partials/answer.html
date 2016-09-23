@@ -1,0 +1,23 @@
+<div ng-controller="answerController">
+  <div class="row">
+    <div>
+      <a href="#/home">Home</a>
+      <a href="#/question/{{question._id}}">Go Back to Question</a>
+    </div>
+    <div class="right">
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+  <div class='row'>
+    <div class="col s8">
+      <h2>{{question.content}}</h2>
+      <h5>{{question.description}}</h5>
+    </div>
+  </div>
+  <form>
+    <label>Your Answer: <input type="textarea" ng-model="answer.content"></label>
+    <label>Supporting details for your answer(optional): <input type="textarea" ng-model="answer.description"></label>
+    <button><a href="#/home">Cancel</a></button>
+    <button ng-click="postAnswer(answer, question._id)">Submit</button>
+  </form>
+</div>

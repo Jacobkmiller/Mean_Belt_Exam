@@ -1,0 +1,27 @@
+
+<div ng-controller="homeController">
+  <div class='row'>
+    <div class="col s8">
+      <h4>Welcome {{user.name}}</h4>
+      <a href="#/question">Add a Question</a>
+      <a class="right" href="#/logout">Logout</a>
+      <div class="right">
+        <label>Search <input type="text" ng-model="search"></label>
+      </div>
+      <div>
+        <table>
+          <tr>
+            <th>Question</th>
+            <th>Answers</th>
+            <th>Action</th>
+          </tr>
+          <tr ng-repeat='question in questions | orderBy: "-answercount" | filter: search'>
+            <td>{{question.content}}</td>
+            <td>{{question.answercount}}</td>
+            <td><a href="#/question/{{question._id}}">Show</a>   <a href="#/answer/{{question._id}}">Answer</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
